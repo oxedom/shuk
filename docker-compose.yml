@@ -5,8 +5,6 @@ services:
     image: postgres
     container_name: local_shuk
     restart: always
-    env_file:
-      - .env.development
     environment:
       POSTGRES_USER: ${DB_USERNAME}
       POSTGRES_PASSWORD: ${DB_PASSWORD}
