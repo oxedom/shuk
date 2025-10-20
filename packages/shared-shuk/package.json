@@ -1,9 +1,8 @@
 {
-  "name": "@guy-vaserman/shared-my-training-app",
+  "name": "@guy-vaserman/shuk",
   "version": "1.0.0",
   "description": "Shared Utils",
   "packageManager": "pnpm@10.15.0",
-  "repository": "git@github.com:guy-vaserman/shared-my-training-app.git",
   "author": "oxedom <oxedom@gmail.com>",
   "exports": "./src/index.ts",
   "publishConfig": {
