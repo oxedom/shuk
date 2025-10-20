@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-title {
+  font-family: "Heebo", sans-serif;
+
+  font-stretch: 100%;
+}
+
+.font-body {
+  font-family: "Open Sans", sans-serif;
+  font-stretch: 100%;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Heebo", sans-serif;
+  font-weight: 400;
+  font-stretch: 100%;
+}
+
+.bg-box-3 {
+  background-color: #282828;
+}
+
+@media (min-width: 1024px) {
+  .lg\:bg-box-3 {
+    background-color: #282828;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 4%; /* hsl(0, 0%, 4%) is #0a0a0a */
+    --foreground: 210 40% 98%;
+    --card: 0 0% 9%; /* hsl(0, 0%, 9%) is #171717 */
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 0 0% 13%; /* hsl(0, 0%, 13%) is #212121 */
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 0 0% 15%; /* hsl(0, 0%, 15%) is #272727 */
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+  }
+
+  .no-arrows::-webkit-outer-spin-button,
+  .no-arrows::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  .no-arrows {
+    -moz-appearance: textfield;
+  }
+}
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

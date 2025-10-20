@@ -1,0 +1,704 @@
+{
+  "Common": {
+    "genderType": {
+      "MALE": "זכר",
+      "FEMALE": "נקבה",
+      "OTHER": "אחר"
+    },
+    "roleTypes": {
+      "superadmin": "סופראדמין",
+      "gymAdmin": "מנהל חד\"כ",
+      "coach": "מאמן",
+      "trainee": "מתאמן"
+    },
+    "next": "הבא",
+    "previous": "קודם",
+    "userCount": "מספר משתמשים",
+    "actions": "פעולות",
+    "active": "פעיל",
+    "inactive": "לא פעיל",
+    "email": "אימייל",
+    "status": "סטטוס",
+    "gender": "מגדר",
+    "fullName": "שם מלא",
+    "is_active": "סטטוס",
+    "name": "שם",
+    "phone": "טלפון",
+    "roles": "תפקידים",
+    "replaceExercise": "החלף תרגיל",
+    "removeExercise": "הסר תרגיל",
+    "showHistory": "הצג היסטוריה",
+    "openMenu": "פתח תפריט",
+    "copyEmail": "העתק אימייל",
+    "masterActionsBack": "חזור",
+    "closeWorkout": "בטל אימון",
+    "addExercise": "הוסף תרגיל",
+    "back": "חזור",
+    "cancel": "ביטול",
+    "completeExercise": "סיים תרגיל",
+    "completedExercise": "תרגיל בוצע",
+    "confirm": "אישור",
+    "creating": "יוצר...",
+    "delete": "מחק",
+    "deleting": "מחיק...",
+    "edit": "ערוך",
+    "englishName": "שם באנגלית",
+    "exercise": "תרגיל",
+    "exercises": "תרגילים",
+    "hebrewName": "שם בעברית",
+    "loading": "טוען...",
+    "remove": "הסר הכל",
+    "removeSet": "הסר סט",
+    "repetitions": "חזרות",
+    "reps": "חזרות",
+    "rir": "RIR",
+    "rpe": "RPE",
+    "save": "שמור",
+    "saving": "שומר...",
+    "search": "חיפוש",
+    "terminate": "הפסק",
+    "type": "סוג",
+    "weight": "משקל",
+    "kg": "ק״ג",
+    "noWorkoutsAvailable": "למתאמן זה אין אימונים זמינים",
+    "sec": "שניות",
+    "selectTraineeToViewWorkouts": "בחר מתאמן כדי לצפות באימונים הזמינים שלו",
+    "selectWorkout": "בחר אימון",
+    "selected": "נבחר",
+    "startSession": "התחל סשן",
+    "starting": "מתחיל...",
+    "time": "זמן",
+    "totalSets": "סה״כ סטים",
+    "totalWeight": "משקל כולל",
+    "created": "נוצר",
+    "updated": "עודכן",
+    "createdAt": "נוצר בתאריך",
+    "english_name": "שם באנגלית",
+    "gym_id": "מזהה חדר כושר",
+    "hebrew_name": "שם בעברית",
+    "primary_color": "צבע עיקרי",
+    "primary_color_foreground": "צבע חזית",
+    "updatedAt": "עודכן בתאריך",
+    "assigning": "משייך..."
+  },
+  "Components": {
+    "ExerciseMuscleManager": "מנהל שרירים תרגילים",
+    "AddExerciseDialog": {
+      "englishNameRequired": "שם באנגלית נדרש",
+      "exerciseCreated": "התרגיל נוצר בהצלחה",
+      "exerciseCreationFailed": "יצירת התרגיל נכשלה",
+      "hebrewNameRequired": "שם בעברית נדרש",
+      "title": "הוסף תרגיל",
+      "typeTime": "זמן",
+      "typeTimeWeight": "זמן ומשקל",
+      "typeWeight": "משקל"
+    },
+    "DashboardPlay": {
+      "activeWorkouts": "אימונים פעילים",
+      "programProgress": "התקדמות תוכנית",
+      "availableWorkouts": "אימונים זמינים",
+      "chooseYourWorkout": "הפעל את האימון שלך",
+      "continue": "המשך",
+      "ctaPlay": "התחל",
+      "ctaStarting": "אימון מתחיל...",
+      "noWorkoutPlans": "אין תוכניות אימון",
+      "welcomeBack": "שלום {firstName}!",
+      "workout": "אימון",
+      "workoutHistory": "היסטוריית אימונים"
+    },
+    "ExerciseCardViewer": {
+      "clearAllFilters": "נקה סינון",
+      "filterByMuscle": "סנן לפי שריר",
+      "noExercisesFound": "לא נמצאו תרגילים התואמים \"",
+      "searchExercises": "חפש תרגילים..."
+    },
+    "ExerciseHistoryDialog": {
+      "exerciseHistoryTitle": "היסטוריה של {exerciseName}",
+      "noHistoryFound": "לא נמצאו תרגילים התואמים",
+      "set": "סט",
+      "workoutOnDate": "אימון בתאריך {date}"
+    },
+    "ExerciseCommentsDialog": {
+      "title": "הערות עבור {exerciseName}",
+      "noComments": "לא נמצאו הערות עבור תרגיל זה"
+    },
+    "FinishWorkoutDialog": {
+      "confirmFinish": "אשר סיום",
+      "continueWorkout": "המשך אימון",
+      "finishWorkout": "סיים אימון",
+      "finishWorkoutConfirmation": "האם אתה בטוח שברצונך לסיים את האימון הזה?",
+      "notAllExercisesCompleted": "השלמת {completed} מתוך {total} תרגילים. תרגילים שלא הושלמו יסומנו כ-לא בוצעו."
+    },
+    "LoginButton": {
+      "loginWithGoogle": "התחברות עם גוגל"
+    },
+    "LogoutButton": {
+      "logout": "התנתק"
+    },
+    "ProgramBuilder": {
+      "confirmUpdateTitle": "אשר עדכון",
+      "confirmUpdateMessage": "האם אתה בטוח שברצונך לעדכן את התוכנית עבור {traineeName}?",
+      "updateProgram": "עדכן תוכנית",
+      "active": "פעיל",
+      "addCoachSessionTitle": "התחל סשן חדש",
+      "addWorkoutComment": "הוסף הערה לאימון כאן",
+      "addWorkoutLabel": "הוסף אימון",
+      "assign": "שייך",
+      "assignFailed": "שיוך האימון נכשל",
+      "assignSuccess": "אימון \"{workoutName}\" שויך בהצלחה ל{traineeName}",
+      "assignToTrainee": "שייך למתאמן",
+      "assignWorkoutTitle": "שייך אימון למתאמן",
+      "assigning": "...משייך",
+      "availablePrograms": "תוכניות זמינות:",
+      "clickToEditProgramTitle": "לחץ לעריכת שם התוכנית",
+      "comments": "הערות",
+      "deleteWorkoutConfirm": "?האם אתה בטוח שברצונך למחוק אימון זה",
+      "editWorkoutNamePrompt": ":הזן שם חדש לאימון זה",
+      "loadExistingProgram": "טען תוכנית קיימת",
+      "loadExistingProgramTitle": "טען תוכנית קיימת",
+      "loadingProgram": "...טוען תוכנית",
+      "makeMainProgram": "הפוך לתוכנית הפעילה",
+      "noTraineeOrProgramSelected": "לא נבחר מתאמן או תוכנית",
+      "noTraineesFound": ".לא נמצאו מתאמנים",
+      "noWorkoutsAvailable": "למתאמן זה אין אימונים זמינים",
+      "noWorkoutsFound": "לא נמצאו אימונים",
+      "programLoadedSuccessfully": "תוכנית {programName} נטענה בהצלחה עבור {traineeName}",
+      "programUpdatedSuccessfully": "התוכנית עודכנה בהצלחה",
+      "searchTraineesPlaceholder": "...חיפוש מתאמנים",
+      "selectProgramToLoad": ".בחר תוכנית לטעינה",
+      "selectTrainee": "בחר מתאמן",
+      "selectTraineeAndWorkout": "בחר מתאמן ואימון להתחלת סשן אימון חדש",
+      "selectTraineeFirst": "בחר מתאמן תחילה",
+      "selectTraineeToView": ".בחר מתאמן כדי לצפות בתוכניות שלו",
+      "selectTraineeToViewWorkouts": "בחר מתאמן כדי לצפות באימונים הזמינים שלו",
+      "selectTraineeWorkout": "אנא בחר מתאמן ואימון",
+      "selectTraineesDescription": ".בחר מתאמנים להם תרצה לשייך את תוכנית האימון",
+      "selectWorkout": "בחר אימון",
+      "selected": "נבחר",
+      "startSession": "התחל סשן",
+      "starting": "מתחיל...",
+      "trainee": "מתאמן",
+      "updateFailed": "העדכון נכשל",
+      "updateProgramForTrainee": "ערוך תוכנית ל{traineeName}",
+      "updateSuccess": "העדכון הצליח",
+      "workout": "אימון",
+      "workoutNameEmpty": "שם האימון לא יכול להיות ריק",
+      "workoutNameExists": "אימון בשם זה כבר קיים",
+      "workoutNamePrompt": ":הזן שם לאימון החדש",
+      "you": "אתה",
+      "weight": "משקל"
+    },
+    "SearchBar": {
+      "placeholder": "...חיפוש"
+    },
+    "SetLanguageButton": {
+      "changeLanguage": "שינוי שפה",
+      "english": "English (United States)",
+      "hebrew": "עברית (ישראל)"
+    },
+    "GymAdminManager": {
+      "addUser": "הוסף משתמש",
+      "showingUsers": "מציג {shown} מתוך {total} משתמשים",
+      "filterByEmail": "חפש לפי אימייל...",
+      "columns": "עמודות",
+      "filterByName": "חפש לפי שם...",
+      "title": "מנהל חדר כושר",
+      "deactivateUser": "להקפיא משתמש",
+      "activateUser": "להפעיל משתמש",
+      "editUser": "ערוך משתמש",
+      "deleteUser": "מחק משתמש",
+      "createNewUser": "צור משתמש חדש",
+      "createNewUserDescription": "הזן את הפרטים עבור המשתמש החדש.",
+      "deleteConfirm": {
+        "description": "האם אתה בטוח שברצונך למחוק את {userName}? לא ניתן לשחזר פעולה זו.",
+        "title": "אישור מחיקה"
+      },
+      "updateUserStatusConfirm": {
+        "updateUserStatus": "האם אתה בטוח שברצונך לעדכן את מצב המשתמש ל{status}?",
+        "updateUserStatusConfirm": "האם אתה בטוח שברצונך לעדכן את מצב המשתמש?"
+      },
+      "updateUserStatus": "עדכן מצב משתמש",
+      "editUserDescription": "ערוך את פרטי המשתמש הקיים.",
+      "signupLink": {
+        "title": "קישור הרשמה לחדר כושר",
+        "description": "צור ושתף את קישור ההרשמה וקוד QR של חדר הכושר שלך",
+        "linkTitle": "קישור הרשמה",
+        "linkPlaceholder": "יוצר קישור...",
+        "copyButton": "העתק ללוח",
+        "linkDescription": "שתף קישור זה עם מתאמנים חדשים שיכולו להירשם חחדר כושר",
+        "qrTitle": "קוד QR",
+        "qrAlt": "קוד QR להרשמה לחדר כושר",
+        "qrDescription": "סרוק את קוד QR זה כדי לגשת במהירות לעמוד ההרשמה",
+        "downloadButton": "הורד קוד QR",
+        "copySuccess": "הצלחה",
+        "copySuccessDescription": "קישור ההרשמה הועתק ללוח",
+        "copyError": "שגיאה",
+        "copyErrorDescription": "נכשל בהעתקת קישור ההרשמה ללוח",
+        "qrNotAvailable": "קוד QR לא זמין להורדה",
+        "qrDownloadSuccess": "קוד QR הורד בהצלחה",
+        "qrDownloadError": "נכשל בהורדת קוד QR"
+      },
+      "userUpdated": "המשתמש עודכן בהצלחה",
+      "userCreated": "המשתמש נוצר בהצלחה",
+      "userDeleted": "המשתמש נמחק בהצלחה",
+      "userStatusUpdated": "סטטוס המשתמש עודכן בהצלחה",
+      "users": "משתמשים",
+      "signupLinks": "קישורי הרשמה"
+    },
+    "GymManager": {
+      "addUser": "הוסף משתמש",
+      "title": "ניהול חדרי כושר",
+      "addGym": "הוסף חדר כושר",
+      "assignGymAdmin": "שייך מנהל חדר כושר",
+      "editGym": "ערוך חדר כושר",
+      "deleteGym": "מחק חדר כושר",
+      "userCount": "מספר משתמשים",
+      "gymId": "מזהה חדר כושר",
+      "englishName": "שם באנגלית",
+      "hebrewName": "שם בעברית",
+      "primaryColor": "צבע עיקרי",
+      "foregroundColor": "צבע משני",
+      "created": "נוצר",
+      "updated": "עודכן",
+      "filterByEnglishName": "סנן לפי שם באנגלית...",
+      "filterByHebrewName": "סנן לפי שם בעברית...",
+      "columns": "עמודות",
+      "showingGyms": "מציג {shown} מתוך {total} חדרי כושר",
+      "noGymsFound": "לא נמצאו חדרי כושר.",
+      "gymCreated": "חדר הכושר נוצר בהצלחה",
+      "gymDeleted": "חדר הכושר נמחק בהצלחה",
+      "gymUpdated": "חדר הכושר עודכן בהצלחה",
+      "deleteConfirm": {
+        "title": "אישור מחיקה",
+        "description": "האם אתה בטוח שברצונך למחוק את {gymName}? פעולה זו אינה ניתנת לביטול."
+      },
+      "gymAdminAssigned": "מנהל חדר כושר שויך בהצלחה",
+      "noGymSelected": "לא נבחר חדר כושר",
+      "noUsersAvailable": "אין משתמשים זמינים",
+      "userAdded": "הוסף משתמש"
+    },
+    "Sidebar": {
+      "dashboard": "דשבורד",
+      "statistics": "סטטיסטיקות",
+      "feedback": "פידבק",
+      "multiplay": "לוח אימונים",
+      "profile": "פרופיל",
+      "settings": "הגדרות",
+      "superadmin": "מנהל מערכת",
+      "gym-manger": "מנהל חדר כושר",
+      "trainees": "מתאמנים",
+      "workoutBuilder": "מנהל תוכניות"
+    },
+    "SignUpForm": {
+      "fields": {
+        "firstName": {
+          "label": "שם פרטי",
+          "placeholder": "הזן את השם הפרטי שלך"
+        },
+        "gender": {
+          "label": "מין",
+          "placeholder": "בחר מין"
+        },
+        "gym": {
+          "label": "חדר כושר",
+          "placeholder": "בחר את חדר הכושר שלך"
+        },
+        "lastName": {
+          "label": "שם משפחה",
+          "placeholder": "הזן את שם המשפחה שלך"
+        },
+        "phoneNumber": {
+          "countryCodePlaceholder": "קוד",
+          "label": "מספר טלפון",
+          "placeholder": "הזן מספר טלפון"
+        }
+      },
+      "submitButton": "הרשם",
+      "submitting": "שולח...",
+      "title": "הרשמה",
+      "titleWithGym": "הרשמה {gymName}",
+      "success": {
+        "title": "המשתמש נוצר בהצלחה!"
+      }
+    },
+    "TraineeAnalyticsDashboard": {
+      "frequencyChart": {
+        "avgPerWeek": "ממוצע/שבוע",
+        "calendar": {
+          "title": "יומן"
+        },
+        "daysBetween": "ימים בין",
+        "totalWorkouts": "סה״כ אימונים",
+        "weekOf": "שבוע של",
+        "workoutTypes": {
+          "multiSession": "רב מפגשי",
+          "singleSession": "מפגש יחיד"
+        },
+        "workouts": "אימונים"
+      },
+      "performanceSummary": {
+        "description": "מדדי אימון כוללים לתקופה הנבחרת",
+        "title": "סיכום ביצועים",
+        "totalSets": "סה״כ סטים",
+        "totalWeight": "סה\"כ משקל שהורם",
+        "volume": "נפח",
+        "workouts": "אימונים"
+      },
+      "personalRecords": {
+        "achievedOn": "הושג בתאריך",
+        "next": "הבא",
+        "noPreviousRecord": "אין שיא קודם",
+        "noRecords": "לא נמצאו שיאים אישיים עדיין. המשך להתאמן כדי לקבוע את השיא הראשון שלך!",
+        "noSearchResults": "לא נמצאו תוצאות לחיפוש שלך",
+        "previous": "הקודם",
+        "previousRecord": "קודם:",
+        "searchPlaceholder": "חפש תרגילים...",
+        "title": "שיאים אישיים",
+        "totalRecords": "סהכ תרגילים",
+        "unknownExercise": "תרגיל לא ידוע",
+        "viewExerciseHistory": "היסטוריה תרגיל",
+        "weightUnit": "ק״ג"
+      },
+      "weightChart": {
+        "description": "משקל אימון כולל לאורך זמן",
+        "showing": "מציג",
+        "title": "התקדמות משקל אימון",
+        "workoutSessions": "מפגשי אימון",
+        "completedExercises": "תרגילים שהושלמו",
+        "totalVolumeLabel": "נפח כולל:",
+        "totalWeight": "משקל כולל"
+      }
+    },
+    "TraineeList": {
+      "activate": "הפעל",
+      "activePlan": "תוכנית פעילה",
+      "availablePlans": "תוכניות זמינות",
+      "builder": "מנהל תוכניות",
+      "confirmDeletePlan": "האם אתה בטוח שברצונך למחוק את התוכנית הזאת?",
+      "confirmDeletePlanMessage": "פעולה זו לא ניתן לשחזר ותמחק את כל ההיסטוריה של האימון עבור התוכנית הזאת.",
+      "manageProgramPlans": "ניהול תוכניות אימון",
+      "manageProgramPlansDescription": "צפייה וניהול בתוכניות אימון עבור מתאמן זה",
+      "noActivePlan": "אין תוכנית פעילה",
+      "noAvailablePlans": "אין תוכניות זמינות",
+      "noTraineesFound": ".לא נמצאו מתאמנים",
+      "noTraineesMatchSearch": ".לא נמצאו מתאמנים התואמים את החיפוש",
+      "planActivatedSuccess": "תוכנית פעילה נפעלה בהצלחה",
+      "planDeletedDescription": "התוכנית נמחקה בהצלחה",
+      "planDeletedSuccess": "התוכנית נמחקה בהצלחה",
+      "planLockedSuccess": "תוכנית ננעלה בהצלחה",
+      "profile": "פרופיל",
+      "userStats": "סטטיסטיקות מתאמן",
+      "searchByNamePlaceholder": "...חיפוש מתאמנים לפי שם"
+    },
+    "TraineePlayMenu": {
+      "addNotes": "הוסף הערות כאן...",
+      "addSet": "הוסף סט",
+      "backExercise": "תרגיל קודם",
+      "errorDescription": "שגיאה בשמירת האימון",
+      "errorSavingWorkout": "שגיאה בשמירת האימון",
+      "errorTitle": "שגיאה",
+      "fetchExerciseserrorDescription": "לא ניתן לטעון תרגילים",
+      "fetchExerciseserrorTitle": "שגיאה בטעינת תרגילים",
+      "finishWorkout": "סיום אימון",
+      "loadingSets": "טוען סטים...",
+      "newPR": "!שיא חדש",
+      "newRecord": "שיא חדש",
+      "nextExercise": "תרגיל הבא",
+      "noWorkoutDataToSave": "אין נתוני אימון לשמירה.",
+      "previous": "קודם",
+      "removeExerciseMessage": "האם אתה בטוח שברצונך להסיר את התרגיל הזה?",
+      "removeExerciseTitle": "הסרת תרגיל",
+      "set": "סט {index}",
+      "terminateSession": "להפסיק אימון",
+      "terminateSessionConfirm": "האם אתה בטוח שברצונך לסיים אימון זה? המידע לא יישמר",
+      "unknownError": "שגיאה לא ידועה.",
+      "unknownExercise": "תרגיל לא ידוע",
+      "workoutSavedSuccessfully": "האימון נשמר בהצלחה",
+      "workoutSavedSuccessfullyDescription": "האימון שלך נשמר בהצלחה.",
+      "removeSet": "הסר סט",
+      "reps": "חזרות",
+      "rir": "RIR",
+      "rpe": "RPE",
+      "sec": "שניות",
+      "time": "זמן"
+    },
+    "Ui": {
+      "MultiSelect": {
+        "clear": "נקה",
+        "close": "סגור",
+        "moreItems": "נוספים",
+        "noResultsFound": "לא נמצאו תוצאות.",
+        "searchPlaceholder": "חיפוש...",
+        "selectOptions": "בחר אפשרויות"
+      }
+    },
+    "UserManager": {
+      "addUser": "הוסף משתמש",
+      "createNewUser": "צור משתמש חדש",
+      "createNewUserDescription": "הזן את הפרטים עבור המשתמש החדש.",
+      "deleteConfirm": {
+        "description": "האם אתה בטוח שברצונך למחוק את {userName}? לא ניתן לשחזר פעולה זו.",
+        "title": "אישור מחיקה"
+      },
+      "editUser": "ערוך משתמש",
+      "editUserDescription": "ערוך את פרטי המשתמש הקיים.",
+      "fields": {
+        "active": {
+          "label": "משתמש פעיל"
+        },
+        "gym": {
+          "label": "מכון",
+          "placeholder": ""
+        },
+        "birthday": {
+          "label": "תאריך לידה"
+        },
+        "email": {
+          "label": "אימייל",
+          "placeholder": "הזן כתובת אימייל"
+        },
+        "firstName": {
+          "label": "שם פרטי",
+          "placeholder": "הזן שם פרטי"
+        },
+        "gender": {
+          "label": "מין",
+          "placeholder": "בחר מין"
+        },
+        "gymId": {
+          "label": "מזהה חדר כושר",
+          "none": "ללא",
+          "placeholder": "הזן מזהה חדר כושר"
+        },
+        "lastName": {
+          "label": "שם משפחה",
+          "placeholder": "הזן שם משפחה"
+        },
+        "phone": {
+          "label": "טלפון",
+          "placeholder": "540000123"
+        },
+        "roles": {
+          "label": "תפקידים"
+        }
+      },
+      "gender": {
+        "female": "נקבה",
+        "male": "זכר",
+        "other": "אחר"
+      },
+      "roles": {
+        "coach": "מאמן",
+        "gymAdmin": "מנהל חדר כושר",
+        "superadmin": "מנהל מערכת ראשי",
+        "trainee": "מתאמן"
+      },
+      "status": {
+        "active": "פעיל",
+        "inactive": "לא פעיל"
+      },
+      "tableHeaders": {
+        "actions": "פעולות",
+        "active": "פעיל",
+        "email": "אימייל",
+        "name": "שם",
+        "phone": "טלפון",
+        "roles": "תפקידים"
+      }
+    },
+    "WorkoutExerciseList": {
+      "muscles": "ניקוד שרירים",
+      "addCommentHere": "הוסף הערה לתרגיל",
+      "comment": "הערה",
+      "kg": "ק״ג",
+      "noExercisesAdded": ".עדיין לא נוספו תרגילים לאימון זה. הוסף תרגילים מספריית התרגילים",
+      "removeAll": "הסר הכל",
+      "removeAllButton": "הסר הכל",
+      "removeAllConfirm": "?האם אתה בטוח שברצונך להסיר את כל התרגילים",
+      "reorderButton": "סדר מחדש",
+      "setAllNone": "הגדר הכל ללא",
+      "setAllRir": "הגדר הכל RIR",
+      "setAllRpe": "הגדר הכל RPE",
+      "sets": "סטים",
+      "toggleComment": "הצג/הסתר הערה",
+      "trackNone": "ללא",
+      "trackRirScore": " RIR",
+      "trackRpeScore": "RPE",
+      "trackingType": "סוג מעקב"
+    },
+    "WorkoutSummaryCard": {
+      "performanceChanges": "ביצועים",
+      "personalWeightRecords": "מספר שיאים משקל",
+      "closeWorkout": "סגור אימון",
+      "duration": "אורך אימון",
+      "exercises": "מספר תרגילים",
+      "mainCongratulations": "כל הכבוד!",
+      "secondaryCongratulations": "השלמת את האימון בהצלחה",
+      "sets": "כמות סטים",
+      "weightScore": "משקל כולל",
+      "weight": "שיפור כולל במשקל",
+      "reps": "שיפור כולל בחזרות"
+    }
+  },
+  "Dialogs": {
+    "SelectExercise": {
+      "noResults": "לא נמצאו תרגילים",
+      "title": "בחר תרגיל"
+    }
+  },
+  "Homepage": {
+    "Pricing": {
+      "title": "מחירים",
+      "basic": {
+        "chooseYourPlan": "בחר את התוכנית שלך",
+        "name": "בסיסי",
+        "price": "₪36",
+        "features": {
+          "access": "גישה לאימונים בסיסיים",
+          "tracking": "מעקב התקדמות",
+          "mobile": "גישה לאפליקציה"
+        }
+      },
+      "pro": {
+        "name": "מתקדם",
+        "price": "₪76",
+        "features": {
+          "everything": "כל מה שכלול בבסיסי",
+          "custom": "תוכניות אימון מותאמות",
+          "coach": "תמיכת מאמן",
+          "analytics": "אנליטיקה מתקדמת"
+        },
+        "popular": "הכי פופולרי"
+      },
+      "premium": {
+        "name": "פרימיום",
+        "price": "₪116",
+        "features": {
+          "everything": "כל מה שכלול במתקדם",
+          "coaching": "אימון אישי",
+          "nutrition": "תכנון תזונה",
+          "support": "תמיכה עדיפה"
+        }
+      },
+      "month": "/חודש",
+      "buyNow": "קנה עכשיו",
+      "toastTitle": "נבחרה תוכנית {planName}",
+      "toastDescription": "מפנה לתשלום עבור תוכנית {price}/חודש..."
+    },
+    "About": {
+      "title": "אודותינו"
+    },
+    "Contact": {
+      "title": "צור קשר"
+    },
+    "Tabs": {
+      "home": "/",
+      "about": "מוצר",
+      "pricing": "מחירים",
+      "contact": "צור קשר"
+    }
+  },
+  "Install": {
+    "alreadyInstalledMessage": "🎉 מעולה! אפליקציית My Training App כבר מותקנת במכשיר שלך.",
+    "browsers": {
+      "chromeAndroid": "Chrome באנדרואיד",
+      "chromeDesktop": "Chrome במחשב",
+      "safariIphone": "Safari באייפון",
+      "yourBrowser": "הדפדפן שלך"
+    },
+    "contactUs": "צור קשר",
+    "descriptionAvailable": "עקוב אחר ההוראות הידניות למטה כדי להתקין את האפליקציה.",
+    "descriptionInstalled": "אפליקציית My Training App כבר מותקנת במכשיר שלך.",
+    "descriptionReady": "לחץ על הכפתור למטה כדי להתקין את האפליקציה.",
+    "dismissedMessage": "ההתקנה בוטלה.",
+    "errorMessage": "אירעה שגיאה במהלך ההתקנה. אנא נסה שוב.",
+    "installButton": "התקן אפליקציה",
+    "installing": "מתקין...",
+    "openApp": "פתח אפליקציה",
+    "statusAvailable": "התקנה זמינה",
+    "statusInstalled": "האפליקציה כבר מותקנת",
+    "statusReady": "מוכן להתקנה",
+    "subtitle": "קבל גישה מהירה לאימונים שלך על ידי התקנת האפליקציה שלנו",
+    "successMessage": "האפליקציה הותקנה בהצלחה!",
+    "troubleText": "יש בעיות עם ההתקנה?"
+  },
+  "MultiplayPage": {
+    "addSession": "הוסף אימון",
+    "noActiveSessions": "אין סשנים פעילים",
+    "noActiveSessionsDescription": "הוסף סשן כדי להתחיל לנהל אימונים מרובים",
+    "title": "לוח אימונים"
+  },
+  "Pages": {
+    "Dashboard": {
+      "analytics": "אנליטיקה",
+      "workoutDashboard": "דשבורד אימון"
+    },
+    "Profile": {
+      "analytics": "MISSING-KEY-1",
+      "availableWorkouts": "MISSING-KEY-2",
+      "chooseYourWorkout": "MISSING-KEY-3",
+      "completedWorkouts": "MISSING-KEY-4",
+      "date": "MISSING-KEY-5",
+      "exercises": "MISSING-KEY-6",
+      "noAnalyticsData": "MISSING-KEY-7",
+      "noWorkoutPlans": "MISSING-KEY-8",
+      "loading": "MISSING-KEY-9",
+      "startWorkout": "MISSING-KEY-10",
+      "units": {
+        "kg": "MISSING-KEY-11"
+      },
+      "welcomeBack": "MISSING-KEY-12",
+      "workout": "MISSING-KEY-13",
+      "workoutDashboard": "MISSING-KEY-14",
+      "workoutName": "MISSING-KEY-15",
+      "loadingProfile": "MISSING-KEY-16"
+    },
+    "Settings": {
+      "theme": "נושא ערכת"
+    },
+    "SuperAdmin": {
+      "tabs": {
+        "exerciseMuscles": "תרגילים ושרירים",
+        "users": "משתמשים",
+        "gyms": "חדרי כושר"
+      },
+      "title": "לוח בקרת מנהל מערכת"
+    },
+    "Trainees": {
+      "title": "מתאמנים",
+      "error": "שגיאה בטעינת מתאמנים"
+    },
+    "Statistics": {
+      "title": "סטטיסטיקות מתאמן",
+      "description": "צפה ונתח נתוני ביצועי מתאמנים לאורך זמן",
+      "searchControls": "חיפוש ומסננים",
+      "selectTrainee": "בחר מתאמן",
+      "searchTraineesPlaceholder": "חפש מתאמנים...",
+      "noTraineesFound": "לא נמצאו מתאמנים.",
+      "clearSelection": "נקה בחירה",
+      "dateRange": "טווח תאריכים",
+      "last7Days": "7 ימים אחרונים",
+      "last30Days": "30 ימים אחרונים",
+      "last90Days": "90 ימים אחרונים",
+      "startDate": "תאריך התחלה",
+      "endDate": "תאריך סיום",
+      "searchButton": "חפש",
+      "loading": "טוען סטטיסטיקות...",
+      "emptyState": "אנא בחר מתאמן כדי לצפות בסטטיסטיקות.",
+      "statisticsFor": "סטטיסטיקות עבור {name}"
+    }
+  },
+  "Zod": {
+    "errors": {
+      "firstNameRequired": "שם פרטי הוא חובה",
+      "lastNameRequired": "שם משפחה הוא חובה",
+      "nameFormat": "השם יכול להכיל רק אותיות, רווחים, מקפים וגרשים",
+      "countryCodeRequired": "קוד מדינה הוא חובה",
+      "phoneFormat": "מספר הטלפון חייב להיות באורך 9-14 ספרות ולא יכול להתחיל ב-0",
+      "phoneInvalid": "פורמט מספר טלפון לא תקין",
+      "gymRequired": "אנא בחר חדר כושר",
+      "emailInvalid": "כתובת אימייל לא תקין",
+      "genderRequired": "אנא בחר מין"
+    }
+  }
+}

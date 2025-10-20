@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.env
+.env.local
+.DS_Store
+*.log
+coverage/
+.nyc_output/
+.vscode/
+.idea/
+.turbo
+playwright-report/*
+test-results/*
