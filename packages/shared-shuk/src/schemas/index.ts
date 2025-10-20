@@ -83,72 +83,11 @@ const updateUserSchema = z
     path: createPhoneValidationRefine(true).path,
   });
 
-const addUserToGymSchema = z
-  .object({
-    first_name: z.string().min(2, "Zod.errors.firstNameRequired"),
-    last_name: z.string().min(2, "Zod.errors.lastNameRequired"),
-    email: z.email({ message: "Zod.errors.emailInvalid" }).optional(),
-    countryCode: phoneValidationFields.countryCode.optional(),
-    phone: phoneValidationFields.phone.optional(),
-    gender: z.enum(Object.values(Gender)),
-    birthday: z.date().optional(),
-    gym_id: z.number().min(0, "Zod.errors.gymRequired").optional(),
-    is_active: z.boolean().default(true),
-    is_coach: z.boolean().default(false),
-    is_trainee: z.boolean().default(true),
-    is_gym_admin: z.boolean().default(false),
-    is_super_admin: z.boolean().default(false),
-  })
-  .refine(createPhoneValidationRefine(true).refine, {
-    message: createPhoneValidationRefine(true).message,
-    path: createPhoneValidationRefine(true).path,
-  });
-
-const assignGymAdminSchema = z.object({
-  gym_id: z.number().min(1, "Zod.errors.gymRequired"),
-  user_id: z.number().min(1, "Zod.errors.userIdRequired"),
-});
-
-const addGymSchema = z.object({
-  english_name: z.string().min(1, "Zod.errors.englishNameRequired"),
-  hebrew_name: z.string().min(1, "Zod.errors.hebrewNameRequired"),
-  primary_color: z.string().min(1, "Zod.errors.primaryColorRequired"),
-  primary_color_foreground: z
-    .string()
-    .min(1, "Zod.errors.primaryColorForegroundRequired"),
-  is_active: z.boolean().default(true),
-});
-
-const updateGymSchema = z.object({
-  gym_id: z.number().min(1, "Zod.errors.gymIdRequired"),
-  english_name: z.string().min(1, "Zod.errors.englishNameRequired").optional(),
-  hebrew_name: z.string().min(1, "Zod.errors.hebrewNameRequired").optional(),
-  primary_color: z
-    .string()
-    .min(1, "Zod.errors.primaryColorRequired")
-    .optional(),
-  primary_color_foreground: z
-    .string()
-    .min(1, "Zod.errors.primaryColorForegroundRequired")
-    .optional(),
-});
-
 const softDeleteUserSchema = z.number().min(1, "Zod.errors.userIdRequired");
 
-export type AssignGymAdminSchemaType = z.infer<typeof assignGymAdminSchema>;
-export type AddGymSchemaType = z.infer<typeof addGymSchema>;
 export type SignupFormSchemaType = z.infer<typeof SignupFormSchema>;
-export type AddUserToGymSchemaType = z.infer<typeof addUserToGymSchema>;
+
 export type UpdateUserSchemaType = z.infer<typeof updateUserSchema>;
 export type softDeleteUserSchemaType = z.infer<typeof softDeleteUserSchema>;
-export type UpdateGymSchemaType = z.infer<typeof updateGymSchema>;
 
-export {
-  SignupFormSchema,
-  updateUserSchema,
-  addUserToGymSchema,
-  assignGymAdminSchema,
-  addGymSchema,
-  updateGymSchema,
-  softDeleteUserSchema,
-};
+export { SignupFormSchema, updateUserSchema, softDeleteUserSchema };

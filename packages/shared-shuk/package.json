@@ -1,5 +1,5 @@
 {
-  "name": "@guy-vaserman/shuk",
+  "name": "@oxedom/shared-shuk",
   "version": "1.0.0",
   "description": "Shared Utils",
   "packageManager": "pnpm@10.15.0",
