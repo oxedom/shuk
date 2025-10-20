@@ -1,6 +1,6 @@
 import { User } from "../sequelize/models";
 import { auth } from "../auth";
-import { UserInstance, UserRole } from "@guy-vaserman/shared-my-training-app";
+import { UserInstance, UserRole } from "@oxedom/shared-shuk";
 import type { Session } from "next-auth";
 
 // === DATA ACCESS AUTHORIZATION ===

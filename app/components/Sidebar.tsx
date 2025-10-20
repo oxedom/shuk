@@ -5,7 +5,7 @@ import { ScrollArea } from "app/components/ui/scroll-area";
 import { Avatar, AvatarFallback } from "app/components/ui/avatar";
 import useGlobalStore from "app/store/globalStore";
 import useUserStore from "app/store/userStore";
-import { UserRole } from "@guy-vaserman/shared-my-training-app";
+import { UserRole } from "@oxedom/shared-shuk";
 import { isNameRtl } from "app/libs/utils";
 
 import { cn } from "app/libs/utils";

@@ -4,34 +4,23 @@ import {
   UserInstance,
   formatUserDataWithCountryCode,
   SignupFormSchemaType,
-} from "@guy-vaserman/shared-my-training-app";
+} from "@oxedom/shared-shuk";
 
 import type {
-  AddUserToGymSchemaType,
+
   Gender,
   UpdateUserSchemaType,
-  TraineeOption,
-} from "@guy-vaserman/shared-my-training-app";
+
+} from "@oxedom/shared-shuk";
 import {
   authorizeRoles,
   authorizeGymAccess,
   getAuthenticatedUser,
   authorizeDataAccess,
 } from "./authorizationService";
-import { UserRole } from "@guy-vaserman/shared-my-training-app";
+import { UserRole } from "@oxedom/shared-shuk";
 
-export async function superAdminAddUserToGym(
-  userData: AddUserToGymSchemaType,
-): Promise<void> {
-  await authorizeRoles([UserRole.SUPERADMIN]);
-  if (!userData.gym_id) {
-    throw new Error("Gym ID is required");
-  }
 
-  const formatedPhone = formatUserDataWithCountryCode(userData);
-
-  await User.create({ ...userData, phone: formatedPhone });
-}
 export async function findUserById(userId: number) {
   await authorizeDataAccess(userId);
   const user = await User.findByPk(userId);
@@ -56,21 +45,7 @@ export async function findAllUsers(): Promise<UserInstance[]> {
   return users.map((user) => user.toJSON() as UserInstance);
 }
 
-export async function createUser(
-  userData: AddUserToGymSchemaType,
-): Promise<UserInstance> {
-  await authorizeRoles([UserRole.COACH, UserRole.GYM_ADMIN]);
-  const currentUser = await getAuthenticatedUser();
 
-  if (userData.is_super_admin) throw new Error("Super admin cannot be created");
-
-  const user = await User.create({
-    ...userData,
-    is_trainee: true,
-    gym_id: currentUser.gym_id,
-  });
-  return user.toJSON() as UserInstance;
-}
 
 export async function updateUser(
   userData: UpdateUserSchemaType,
@@ -127,72 +102,9 @@ export async function userSignup(
   });
 }
 
-export async function getTraineesOptions(): Promise<TraineeOption[]> {
-  const currentUser = await getAuthenticatedUser();
-  await authorizeRoles([UserRole.COACH, UserRole.GYM_ADMIN]);
-  await authorizeGymAccess(currentUser.gym_id);
 
-  const users = await User.findAll({
-    where: {
-      gym_id: {
-        [Op.eq]: currentUser.gym_id,
-      },
-      is_trainee: true,
-      is_active: true,
-    },
-  }).then((users) => users.map((user) => user.toJSON() as UserInstance));
 
-  const currentUserRecord = users.find(
-    (user) => user.email === currentUser.email,
-  );
-  const otherUsers = users.filter((user) => user.email !== currentUser.email);
 
-  const trainees = [
-    ...(currentUserRecord
-      ? [
-          {
-            user_id: currentUserRecord.user_id,
-            first_name: currentUserRecord.first_name,
-            last_name: currentUserRecord.last_name,
-            is_me: true,
-          },
-        ]
-      : []),
-    ...otherUsers.map((user) => ({
-      user_id: user.user_id,
-      first_name: user.first_name,
-      last_name: user.last_name,
-      is_me: false,
-    })),
-  ];
-
-  return trainees;
-}
-
-export async function getAllUsersForGym(): Promise<UserInstance[]> {
-  const currentUser = await getAuthenticatedUser();
-  await authorizeRoles([UserRole.COACH, UserRole.GYM_ADMIN]);
-
-  const users = await User.findAll({
-    where: {
-      gym_id: {
-        [Op.eq]: currentUser.gym_id,
-      },
-    },
-  });
-
-  return users.map((user) => user.toJSON() as UserInstance);
-}
-
-export async function addUserToGym(
-  userData: AddUserToGymSchemaType,
-): Promise<UserInstance> {
-  await authorizeRoles([UserRole.COACH, UserRole.GYM_ADMIN]);
-  const currentUser = await getAuthenticatedUser();
-
-  const user = await User.create({ ...userData, gym_id: currentUser.gym_id });
-  return user.toJSON() as UserInstance;
-}
 
 export async function softDeleteUser(targetUserId: number): Promise<void> {
   const currentUser = await getAuthenticatedUser();

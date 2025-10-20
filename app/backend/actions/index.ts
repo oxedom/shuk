@@ -1,23 +1,21 @@
 "use server";
 
 import {
-  addUserToGymSchema,
-  AddUserToGymSchemaType,
   SignupFormSchema,
   SignupFormSchemaType,
   UpdateUserSchemaType,
   updateUserSchema,
   UserInstance,
-} from "@guy-vaserman/shared-my-training-app";
+} from "@oxedom/shared-shuk";
 import type {
-  UserWithGym,
+
   ApiResponse,
-} from "@guy-vaserman/shared-my-training-app";
+} from "@oxedom/shared-shuk";
 import { signIn, signOut } from "app/backend/auth";
-import { User } from "app/backend/sequelize/models";
+
 import { userService } from "../services";
 import { createResponse, createError } from "../utils";
-import { formatUserDataWithCountryCode } from "@guy-vaserman/shared-my-training-app";
+import { formatUserDataWithCountryCode } from "@oxedom/shared-shuk";
 import {
   getAuthenticatedUser,
   getFullAuthenticatedUser,
@@ -48,45 +46,7 @@ export async function getFullAuthenticatedUserAction(): Promise<
   }
 }
 
-export async function getCensoredAuthenticatedUser() {
-  const userSession = await getAuthenticatedUser();
-  const email = userSession.email;
 
-  const user = await User.findOne({
-    where: { email },
-    attributes: {
-      include: [
-        "user_id",
-        "first_name",
-        "last_name",
-        "gender",
-        "gym_id",
-        "is_super_admin",
-        "is_coach",
-        "is_gym_admin",
-        "is_trainee",
-      ],
-    },
-    include: [
-      {
-        as: "gym",
-        model: Gym,
-        attributes: [
-          "english_name",
-          "hebrew_name",
-          "primary_color",
-          "primary_color_foreground",
-        ],
-      },
-    ],
-  });
-  if (!user) {
-    // This case should ideally not happen if the session exists, but good practice to check
-    throw new Error("Authenticated user not found in database.");
-  }
-
-  return user.toJSON() as UserWithGym;
-}
 
 // --- End Helper Functions ---
 
@@ -111,19 +71,7 @@ export async function getUserById(userId: number) {
   }
 }
 
-export async function createUser(
-  userData: AddUserToGymSchemaType,
-): Promise<ApiResponse<UserInstance | null>> {
-  try {
-    addUserToGymSchema.parse(userData);
 
-    userData.phone = formatUserDataWithCountryCode(userData);
-    const newUser = await userService.createUser(userData);
-    return createResponse(newUser as UserInstance, "User created successfully");
-  } catch (error) {
-    return createError(error, "Failed to create user");
-  }
-}
 
 // --- End of Migrated to Services Architecture ---
 

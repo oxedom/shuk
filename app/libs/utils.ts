@@ -1,4 +1,4 @@
-import type { TraineeOption } from "@guy-vaserman/shared-my-training-app";
+
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
 import { useTranslations } from "next-intl";
@@ -34,13 +34,9 @@ export const getErrorMessage = (error: unknown): string =>
 export function isEnglish(value: string) {
   return /^[a-z0-9\s]+$/i.test(value);
 }
-export function concatTraineeName(trainee: TraineeOption) {
-  return `${trainee.first_name} ${trainee.last_name} ${trainee.is_me ? "(Me)" : ""}`;
-}
 
-export function generateAccordionItemId(index: number) {
-  return `item-${index}`;
-}
+
+
 
 export function getColorRGB(className: string): string | null {
   if (typeof window === "undefined") return null;

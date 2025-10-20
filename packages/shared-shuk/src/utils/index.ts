@@ -1,5 +1,5 @@
 import {
-  AddUserToGymSchemaType,
+
   ApiResponse,
   SignupFormSchemaType,
   UpdateUserSchemaType,
@@ -39,7 +39,7 @@ export const unwrapApiResponse = <T>(
 export function formatUserDataWithCountryCode(
   userData:
     | UpdateUserSchemaType
-    | AddUserToGymSchemaType
+
     | SignupFormSchemaType,
 ) {
   let phone = userData.phone;
@@ -50,3 +50,4 @@ export function formatUserDataWithCountryCode(
 
   return countryCode + phone;
 }
+

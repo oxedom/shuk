@@ -2,7 +2,7 @@
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { countryCodes } from "app/shared/business-rules";
-import { userSignup, getActiveGyms } from "app/backend/actions";
+import { userSignup } from "app/backend/actions";
 import { Button } from "app/components/ui/button";
 import {
   Form,
@@ -21,7 +21,7 @@ import {
   SelectValue,
 } from "app/components/ui/select";
 import { toast } from "app/hooks/use-toast";
-import { Gender } from "@guy-vaserman/shared-my-training-app";
+import { Gender } from "@oxedom/shared-shuk";
 import { useRouter } from "next/navigation";
 import { useTranslations } from "next-intl";
 import React, { useState, useEffect } from "react";
@@ -31,10 +31,9 @@ import SetLanguageButton from "./SetLanguageButton";
 import {
   SignupFormSchema,
   SignupFormSchemaType,
-} from "@guy-vaserman/shared-my-training-app";
+} from "@oxedom/shared-shuk";
 import { setDocumentPrimaryColorStyle } from "app/libs/color-theme";
 import { truncateString, translateError } from "app/libs/utils";
-import { GymInstance } from "@guy-vaserman/shared-my-training-app";
 
 function SignupForm() {
   const router = useRouter();
@@ -60,80 +59,12 @@ function SignupForm() {
 
   const [loading, setLoading] = useState<boolean>(false);
   const [error, setError] = useState<string | null>(null);
-  const [gyms, setGyms] = useState<GymInstance[]>([]);
-  const [gymsLoading, setGymsLoading] = useState<boolean>(true);
-  const [selectedGymId, setSelectedGymId] = useState<string | null>(null);
+
+
 
   // Fetch active gyms and handle query parameter on component mount
-  useEffect(() => {
-    const fetchGyms = async () => {
-      try {
-        const { data, success, message } = await getActiveGyms();
 
-        if (success && data) {
-          setGyms(data);
 
-          // Check for gym from localStorage
-          const localStorageGymId = localStorage.getItem("gi");
-          const preselectedGymId = localStorageGymId;
-
-          if (preselectedGymId) {
-            const gymExists = data.find(
-              (gym: GymInstance) => gym.gym_id.toString() === preselectedGymId,
-            );
-
-            if (gymExists) {
-              setValue("gym_id", parseInt(preselectedGymId));
-              setSelectedGymId(preselectedGymId);
-            }
-          }
-        } else {
-          console.error("Failed to fetch gyms:", message);
-        }
-      } catch (error) {
-        console.error("Error fetching gyms:", error);
-      } finally {
-        setGymsLoading(false);
-      }
-    };
-
-    fetchGyms();
-  }, [setValue]);
-
-  //Set color
-  useEffect(() => {
-    if (selectedGymId) {
-      const selectedGym = gyms.find(
-        (gym) => gym.gym_id.toString() === selectedGymId,
-      );
-      if (selectedGym) {
-        setDocumentPrimaryColorStyle(
-          selectedGym.primary_color,
-          selectedGym.primary_color_foreground,
-        );
-      }
-    }
-  }, [selectedGymId]);
-
-  const getTitle = () => {
-    if (!selectedGymId) {
-      return t("title");
-    }
-
-    const selectedGym = gyms.find(
-      (gym) => gym.gym_id.toString() === selectedGymId,
-    );
-
-    if (selectedGym) {
-      const gymName =
-        isHebrew && selectedGym.hebrew_name
-          ? selectedGym.hebrew_name
-          : selectedGym.english_name;
-      return t("titleWithGym", { gymName });
-    }
-
-    return t("title");
-  };
 
   const onSubmit = async (data: SignupFormSchemaType) => {
     setLoading(true);
@@ -167,12 +98,7 @@ function SignupForm() {
   };
   return (
     <div className="bg-card p-6 rounded-lg h-screen  ">
-      <div
-        className={`lg:max-w-md  mx-auto space-y-4 lg:border lg:px-12 lg:py-8 lg:rounded-lg ${selectedGymId ? "border-primary" : ""}`}
-      >
-        <h2 className="text-xl text-center font-bold text-card-foreground">
-          {getTitle()}
-        </h2>
+
         {error && (
           <div className="bg-destructive text-destructive-foreground p-4 rounded">
             {error}
@@ -317,60 +243,7 @@ function SignupForm() {
               )}
             />
 
-            <FormField
-              control={control}
-              name="gym_id"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>{t("fields.gym.label")}</FormLabel>
-                  <FormControl>
-                    <Select
-                      dir={dir}
-                      value={field.value > 0 ? field.value.toString() : ""}
-                      onValueChange={(value) => {
-                        field.onChange(parseInt(value));
-                        setSelectedGymId(value);
-                      }}
-                      disabled={gymsLoading}
-                      key={selectedGymId}
-                    >
-                      <SelectTrigger className="w-full mt-1">
-                        <SelectValue
-                          placeholder={
-                            gymsLoading
-                              ? tCommon("loading")
-                              : t("fields.gym.placeholder")
-                          }
-                        />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {gyms &&
-                          Array.isArray(gyms) &&
-                          gyms.map((gym) => (
-                            <SelectItem
-                              key={gym.gym_id}
-                              value={gym.gym_id.toString()}
-                            >
-                              {truncateString(
-                                isHebrew && gym.hebrew_name
-                                  ? gym.hebrew_name
-                                  : gym.english_name,
-                                45,
-                              )}
-                            </SelectItem>
-                          ))}
-                      </SelectContent>
-                    </Select>
-                  </FormControl>
-                  <FormMessage className="text-destructive text-sm">
-                    {translateError(
-                      form.formState.errors.gym_id?.message,
-                      tZod,
-                    )}
-                  </FormMessage>
-                </FormItem>
-              )}
-            />
+
             <Button type="submit" className="w-full mt-4" disabled={loading}>
               {loading ? t("submitting") : t("submitButton")}
             </Button>
@@ -382,7 +255,7 @@ function SignupForm() {
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
 export default SignupForm;

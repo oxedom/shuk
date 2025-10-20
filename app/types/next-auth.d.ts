@@ -1,4 +1,4 @@
-import { UserRole } from "@guy-vaserman/shared-my-training-app";
+import { UserRole } from "@oxedom/shared-shuk";
 import "next-auth";
 import "next-auth/jwt";
 

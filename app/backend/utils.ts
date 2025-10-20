@@ -1,4 +1,4 @@
-import type { ApiResponse } from "@guy-vaserman/shared-my-training-app";
+import type { ApiResponse } from "@oxedom/shared-shuk";
 import { ZodError } from "zod";
 import { UniqueConstraintError } from "sequelize";
 import * as Sentry from "@sentry/nextjs";

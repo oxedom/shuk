@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
-import { UserInstance, UserRole } from "@guy-vaserman/shared-my-training-app";
+import { UserInstance, UserRole } from "@oxedom/shared-shuk";
 import type { NextAuthConfig } from "next-auth";
 import type { JWT } from "next-auth/jwt";
 import type { Session, User } from "next-auth";

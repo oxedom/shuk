@@ -1,5 +1,5 @@
-import { UserRole } from "@guy-vaserman/shared-my-training-app";
-import { UserWithGym } from "@guy-vaserman/shared-my-training-app";
+import { UserInstance, UserRole } from "@oxedom/shared-shuk";
+
 import { create } from "zustand";
 
 export interface UserState {
@@ -11,8 +11,8 @@ export interface UserState {
   resetRoles: () => void;
   loadedRoles: boolean;
   setLoadedRoles: (loaded: boolean) => void;
-  user: UserWithGym | null;
-  setUser: (user: UserWithGym | null) => void;
+  user: UserInstance | null;
+  setUser: (user: UserInstance | null) => void;
 }
 
 const useUserStore = create<UserState>()((set, get) => {

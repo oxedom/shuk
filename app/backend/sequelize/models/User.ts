@@ -6,7 +6,7 @@ import {
   InferCreationAttributes,
 } from "sequelize";
 import { sequelize } from "..";
-import { UserSchema } from "@guy-vaserman/shared-my-training-app";
+import { UserSchema } from "@oxedom/shared-shuk";
 
 export interface User
   extends UserSchema,

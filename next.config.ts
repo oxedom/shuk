@@ -78,7 +78,7 @@ export default withSentryConfig(
     // For all available options, see:
     // https://www.npmjs.com/package/@sentry/webpack-plugin#options
 
-    org: "mytraining",
+    org: "oxedom",
 
     project: "javascript-nextjs",
 

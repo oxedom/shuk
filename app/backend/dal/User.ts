@@ -1,5 +1,5 @@
 import User from "../sequelize/models/User";
-import { UserInstance } from "@guy-vaserman/shared-my-training-app";
+import { UserInstance } from "@oxedom/shared-shuk";
 
 export async function getUserById(userId: number) {
   const user = await User.findByPk(userId);
